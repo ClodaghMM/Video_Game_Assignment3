@@ -48198,6 +48198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1226927736}
+  stars:
+  - {fileID: 350985261}
+  - {fileID: 652592980}
 --- !u!4 &2112799213
 Transform:
   m_ObjectHideFlags: 0

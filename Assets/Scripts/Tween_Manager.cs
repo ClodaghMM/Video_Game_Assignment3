@@ -8,24 +8,52 @@ public class Tween_Manager : MonoBehaviour
 
     [SerializeField] private GameObject player; 
     private Tweener tweener; 
-    //positions of stars used to calculate the lerp
-    //[SerializeField] private Vector3[] stars_pos;
-    private int count; 
+    [SerializeField] private Transform[] stars;
+    private string move;  
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         tweener = gameObject.GetComponent<Tweener>();
+
+        move = "right";
     }
 
     // Update is called once per frame
     void Update() {
 
-    tweener.AddTween(player.transform, player.transform.position, new Vector3(1.859f, 1.66f, 0.0f), 1.5f);
+        //update works so that it is being run every frame
+        //which is why moveCount is being triggered so much. 
+        StartCoroutine(addTweensLerp());
 
-    Debug.Log(tweener);
 
-    }    
-   
+    }
+
+    IEnumerator addTweensLerp() {
+        
+        switch(move) 
+        {
+        case "right":
+        tweener.AddTween(player.transform, player.transform.position, new Vector3(1.859f, 1.66f, 0.0f), 1.5f); 
+        move = "down";
+        break; 
+
+        case "down":
+        tweener.AddTween(player.transform, player.transform.position, new Vector3(1.883f, 0.47f, 0.0f), 1.5f);
+        break; 
+
+        case "left":
+        tweener.AddTween(player.transform, player.transform.position, new Vector3(-0.264f, 0.47f, 0.0f), 1.5f);
+        break; 
+        
+        }
+        yield return new WaitForEndOfFrame();
+
+    }
 }
+
+
+
+  
