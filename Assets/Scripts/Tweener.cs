@@ -8,10 +8,10 @@ public class Tweener : MonoBehaviour
     private float timeFraction;
     private string direction;
     private int move_count = 0; 
+    
     // Start is called before the first frame update
     void Start()
     {
-        direction = "right";
     }
 
     // Update is called once per frame
@@ -29,18 +29,10 @@ public class Tweener : MonoBehaviour
          activeTween.Target.position = activeTween.EndPos;
             activeTween = null; 
           }
+         
         } 
 
-        moveCount();
     }
-
-    public int moveCount() {
-        move_count = move_count+ 1; 
-        return move_count;
-    }
-
-
-
 
     public void AddTween(Transform targetObject, Vector3 startPos, Vector3 endPos, float duration) {
 
@@ -48,8 +40,5 @@ public class Tweener : MonoBehaviour
             activeTween = new Tween(targetObject, startPos, endPos, Time.time, duration);
         }
 }
-
-    
-
 }
 
