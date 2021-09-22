@@ -1,22 +1,7 @@
 fileFormatVersion: 2
 guid: 543c74ff8e6564aecba5cf7ac45842a7
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -7350838425906478514
-    second: Pink Cat_0
-  - first:
-      213: -725540605012972230
-    second: Pink Cat_1
-  - first:
-      213: -3204011218283600214
-    second: Pink Cat_2
-  - first:
-      213: 1805928960367107394
-    second: Pink Cat_3
-  - first:
-      213: 5385189418899482975
-    second: Pink Cat_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -90,126 +75,9 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Pink Cat_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 67
-        width: 28
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e428d86e5639cf990800000000000000
-      internalID: -7350838425906478514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pink Cat_1
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 67
-        width: 28
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3d6410f9ac5ee5f0800000000000000
-      internalID: -725540605012972230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pink Cat_2
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 35
-        width: 28
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa6e6d5c5c01983d0800000000000000
-      internalID: -3204011218283600214
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pink Cat_3
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 35
-        width: 28
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24d954c32d2ff0910800000000000000
-      internalID: 1805928960367107394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pink Cat_4
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 3
-        width: 28
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5922b99e390cba40800000000000000
-      internalID: 5385189418899482975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

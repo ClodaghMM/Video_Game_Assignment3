@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 47447cf97c33e498698951fccbfe5f73
+guid: 3cde207a9c4724f0ab47bdb70fd4db90
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6190396615221082018
-    second: Scared State_0
+      213: -2639994882831775739
+    second: Purple Cat_Final_0
   - first:
-      213: -4393816287225841567
-    second: Scared State_1
+      213: 4849909239903190585
+    second: Purple Cat_Final_1
   - first:
-      213: -1440951927117766163
-    second: Scared State_2
+      213: 6947128843043205897
+    second: Purple Cat_Final_2
   - first:
-      213: 3707589721619874715
-    second: Scared State_3
+      213: -8340056324230135750
+    second: Purple Cat_Final_3
   - first:
-      213: 2771438162748383252
-    second: Scared State_4
+      213: -5205660912828954995
+    second: Purple Cat_Final_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,11 +106,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Scared State_0
+      name: Purple Cat_Final_0
       rect:
         serializedVersion: 2
         x: 8
-        y: 268
+        y: 276
         width: 112
         height: 88
       alignment: 0
@@ -120,18 +120,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5887fa931b471aa0800000000000000
-      internalID: -6190396615221082018
+      spriteID: 50886ff24aadc5bd0800000000000000
+      internalID: -2639994882831775739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared State_1
+      name: Purple Cat_Final_1
       rect:
         serializedVersion: 2
         x: 136
-        y: 268
+        y: 276
         width: 112
         height: 88
       alignment: 0
@@ -141,18 +141,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 168f39fbd570603c0800000000000000
-      internalID: -4393816287225841567
+      spriteID: 93e705df1c65e4340800000000000000
+      internalID: 4849909239903190585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared State_2
+      name: Purple Cat_Final_2
       rect:
         serializedVersion: 2
         x: 8
-        y: 140
+        y: 148
         width: 112
         height: 88
       alignment: 0
@@ -162,18 +162,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de12bb55bd5b00ce0800000000000000
-      internalID: -1440951927117766163
+      spriteID: 903f57210e8296060800000000000000
+      internalID: 6947128843043205897
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared State_3
+      name: Purple Cat_Final_3
       rect:
         serializedVersion: 2
         x: 136
-        y: 140
+        y: 148
         width: 112
         height: 88
       alignment: 0
@@ -183,18 +183,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b93ca0a4531047330800000000000000
-      internalID: 3707589721619874715
+      spriteID: a30438be5fa224c80800000000000000
+      internalID: -8340056324230135750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared State_4
+      name: Purple Cat_Final_4
       rect:
         serializedVersion: 2
         x: 8
-        y: 12
+        y: 20
         width: 112
         height: 88
       alignment: 0
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41024974350267620800000000000000
-      internalID: 2771438162748383252
+      spriteID: d86c1b50bf6c1c7b0800000000000000
+      internalID: -5205660912828954995
       vertices: []
       indices: 
       edges: []
