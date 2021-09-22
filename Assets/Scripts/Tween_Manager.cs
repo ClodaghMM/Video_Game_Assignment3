@@ -36,24 +36,24 @@ public class Tween_Manager : MonoBehaviour
         switch(move) 
         {
         case "right":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(1.859f, 1.66f, 0.0f), 1.5f); 
+        tweener.AddTween(player.transform, player.transform.position, new Vector3(-0.28500f, 2.767262f, 0.0f), 1.5f); 
         yield return new WaitForSeconds(1);
         move = "down";
         break; 
 
         case "down":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(1.883f, 0.47f, 0.0f), 1.5f);
+        tweener.AddTween(player.transform, player.transform.position, new Vector3(-0.261f, 1.577262f, 0.0f), 1.5f);
         yield return new WaitForSeconds(2);
         move = "left";
         break; 
 
         case "left":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(-1.84f, 0.47f, 0.0f), 1.5f);yield return new WaitForSeconds(1);
+        tweener.AddTween(player.transform, player.transform.position, new Vector3(-3.984f, 1.577262f, 0.0f), 1.5f);yield return new WaitForSeconds(1);
         move = "up";
         break; 
 
         case "up":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(-1.84f, 1.66f, 0.0f), 1.5f);
+        tweener.AddTween(player.transform, player.transform.position, new Vector3(-3.984f, 2.767262f, 0.0f), 1.5f);
         yield return new WaitForSeconds(2);
         move = "right";
         break; 
