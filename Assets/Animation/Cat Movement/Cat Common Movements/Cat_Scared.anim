@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Green left
+  m_Name: Cat_Scared
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -869834929677503938, guid: a181e51ca5a704e86a90d3e576447e4f, type: 3}
+      value: {fileID: 4440916134167676883, guid: d12969ffe72924806ad20a8c6ea9d6d5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -40,7 +40,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -869834929677503938, guid: a181e51ca5a704e86a90d3e576447e4f, type: 3}
+    - {fileID: 4440916134167676883, guid: d12969ffe72924806ad20a8c6ea9d6d5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
