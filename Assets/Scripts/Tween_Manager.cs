@@ -31,24 +31,19 @@ public class Tween_Manager : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-    StartCoroutine(movePlayer());
-        }
-
-    IEnumerator movePlayer() {
      if (i < star_pos.Length){
             tweener.AddTween(player.transform, player.transform.position, star_pos[i], 2.0f); 
-        
         }
 
         if (player.transform.position == star_pos[i]) {
+            animatorController.SetTrigger(animatorDirections[i]);
              i = i + 1; 
              if (i == 4) {
                  i = 0; 
              }
         }
-        yield return new WaitForSeconds(2);
 
-    }   
+      }   
     }
 
     
