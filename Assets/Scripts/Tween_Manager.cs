@@ -8,67 +8,55 @@ public class Tween_Manager : MonoBehaviour
 
     [SerializeField] private GameObject player; 
     private Tweener tweener; 
-    private string move;  
-    private bool timer; 
-    private Transform[] position_vals;
-
-
+    private int i;   
+    [SerializeField] private Vector3[] star_pos; 
+    private bool move; 
+    private string[] animatorDirections;
+    private Animator animatorController; 
+    private AudioSource moveSound; 
 
     // Start is called before the first frame update
     void Start()
     {
         tweener = gameObject.GetComponent<Tweener>();
-        move = "right";
-    
+        i = 0; 
+        animatorController = player.GetComponent<Animator>();
+
+      //  moveSound = player.GetComponent<AudioSource>();
+
+        animatorDirections = new string [4] {
+            "MoveDown", "MoveLeft", "MoveUp", "MoveRight"
+        };
     }
 
     // Update is called once per frame
     void Update() {
-
-        //update works so that it is being run every frame
-        //which is why the move variable is being triggered so much. 
-        StartCoroutine(addTweensLerp());
-
-    }
-
-    IEnumerator addTweensLerp() {
-
-        switch(move) 
-        {
-        case "right":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(-0.28500f, 2.767262f, 0.0f), 1.5f); 
-        yield return new WaitForSeconds(1);
-        move = "down";
-        break; 
-
-        case "down":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(-0.261f, 1.577262f, 0.0f), 1.5f);
-        yield return new WaitForSeconds(2);
-        move = "left";
-        break; 
-
-        case "left":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(-3.984f, 1.577262f, 0.0f), 1.5f);yield return new WaitForSeconds(1);
-        move = "up";
-        break; 
-
-        case "up":
-        tweener.AddTween(player.transform, player.transform.position, new Vector3(-3.984f, 2.767262f, 0.0f), 1.5f);
-        yield return new WaitForSeconds(2);
-        move = "right";
-        break; 
-
-
+    StartCoroutine(movePlayer());
         }
 
-        yield return new WaitForEndOfFrame();
+    IEnumerator movePlayer() {
+     if (i < star_pos.Length){
+            tweener.AddTween(player.transform, player.transform.position, star_pos[i], 2.0f); 
+            //moveSound.Play();
+            }
 
+        if (player.transform.position == star_pos[i]) {
+            animatorController.SetTrigger(animatorDirections[i]);
+             i = i + 1;
+             Debug.Log(i);
+             if (i == 4) {
+                 i = 0; 
+             }
+        }
+        yield return new WaitForSeconds(2);
+
+    }   
     }
 
-    public void destroyTween() {
-        Destroy(gameObject.GetComponent<Tweener>());
-    }
-}
+    
+
+    
+
 
 
 

@@ -26541,7 +26541,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2411368012257315824, guid: 3563bd329046d418bba2108c4bef8355, type: 3}
+  m_Sprite: {fileID: -1824206217497452736, guid: 3563bd329046d418bba2108c4bef8355, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -48444,6 +48444,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1226927736}
+  star_pos:
+  - {x: -3.984, y: 2.787262, z: 0}
+  - {x: -0.285, y: 2.767262, z: 0}
+  - {x: -0.261, y: 1.7, z: 0}
+  - {x: -3.984, y: 1.577262, z: 0}
+  animatorController: {fileID: 1226927737}
 --- !u!4 &2112799213
 Transform:
   m_ObjectHideFlags: 0

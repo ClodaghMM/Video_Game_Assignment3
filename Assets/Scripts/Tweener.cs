@@ -6,8 +6,8 @@ public class Tweener : MonoBehaviour
 {
     private Tween activeTween; 
     private float timeFraction;
-    private string direction;
-    private int move_count = 0; 
+
+    
     
     // Start is called before the first frame update
     void Start()
