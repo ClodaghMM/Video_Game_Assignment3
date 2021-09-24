@@ -37,13 +37,11 @@ public class Tween_Manager : MonoBehaviour
     IEnumerator movePlayer() {
      if (i < star_pos.Length){
             tweener.AddTween(player.transform, player.transform.position, star_pos[i], 2.0f); 
-            //moveSound.Play();
-            }
+        
+        }
 
         if (player.transform.position == star_pos[i]) {
-            animatorController.SetTrigger(animatorDirections[i]);
-             i = i + 1;
-             Debug.Log(i);
+             i = i + 1; 
              if (i == 4) {
                  i = 0; 
              }
