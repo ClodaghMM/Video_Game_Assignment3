@@ -22,7 +22,7 @@ public class Tween_Manager : MonoBehaviour
         i = 0; 
         animatorController = player.GetComponent<Animator>();
 
-      //  moveSound = player.GetComponent<AudioSource>();
+      moveSound = player.GetComponent<AudioSource>();
 
         animatorDirections = new string [4] {
             "MoveDown", "MoveLeft", "MoveUp", "MoveRight"
@@ -33,6 +33,7 @@ public class Tween_Manager : MonoBehaviour
     void Update() {
      if (i < star_pos.Length){
             tweener.AddTween(player.transform, player.transform.position, star_pos[i], 2.0f); 
+            moveSound.Play();
         }
 
         if (player.transform.position == star_pos[i]) {

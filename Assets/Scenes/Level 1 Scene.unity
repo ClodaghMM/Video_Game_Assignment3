@@ -27044,7 +27044,7 @@ GameObject:
   - component: {fileID: 1226927737}
   - component: {fileID: 1226927740}
   m_Layer: 0
-  m_Name: Mouse
+  m_Name: Mouse (Pac-Man)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27144,15 +27144,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 28f2f9e568fad442f93230e177c007ca, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 200eadb0fdfe74d2b9f7c50cd6467465, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.92
+  m_Pitch: 0.57
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 194
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -43250,8 +43250,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 271754458f5f34d62970263dfa840228, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.426
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
