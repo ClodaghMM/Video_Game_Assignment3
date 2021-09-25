@@ -14,6 +14,8 @@ public class Tween_Manager : MonoBehaviour
     private string[] animatorDirections;
     private Animator animatorController; 
     private AudioSource moveSound; 
+    private float timer; 
+    private float j = 1.0f; 
 
     // Start is called before the first frame update
     void Start()
@@ -31,20 +33,30 @@ public class Tween_Manager : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        timer += Time.deltaTime; 
+        if((int)timer == j){
+            moveSound.Play();
+            j +=1; }
      if (i < star_pos.Length){
             tweener.AddTween(player.transform, player.transform.position, star_pos[i], 2.0f); 
-            moveSound.Play();
         }
 
         if (player.transform.position == star_pos[i]) {
             animatorController.SetTrigger(animatorDirections[i]);
              i = i + 1; 
              if (i == 4) {
-                 i = 0; 
+            StartCoroutine(DieAnimation()); 
+             i = 0;
              }
         }
+      }  
+            IEnumerator DieAnimation() {
+            animatorController.SetTrigger("Die");
+            yield return null;
+            animatorController.SetTrigger("Start_Move");
+            }
 
-      }   
+
     }
 
     
