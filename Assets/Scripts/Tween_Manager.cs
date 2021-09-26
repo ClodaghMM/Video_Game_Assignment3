@@ -13,7 +13,8 @@ public class Tween_Manager : MonoBehaviour
     private bool move; 
     private string[] animatorDirections;
     private Animator animatorController; 
-    private AudioSource moveSound; 
+    private AudioSource moveSound;
+    [SerializeField] private AudioSource[] playerSounds;
     private float timer; 
     private float j = 1.0f; 
 
@@ -24,8 +25,6 @@ public class Tween_Manager : MonoBehaviour
         i = 0; 
         animatorController = player.GetComponent<Animator>();
 
-      moveSound = player.GetComponent<AudioSource>();
-
         animatorDirections = new string [4] {
             "MoveDown", "MoveLeft", "MoveUp", "MoveRight"
         };
@@ -35,7 +34,7 @@ public class Tween_Manager : MonoBehaviour
     void Update() {
         timer += Time.deltaTime; 
         if((int)timer == j){
-            moveSound.Play();
+            playerSounds[0].Play();
             j +=1; }
      if (i < star_pos.Length){
             tweener.AddTween(player.transform, player.transform.position, star_pos[i], 2.0f); 
@@ -52,6 +51,7 @@ public class Tween_Manager : MonoBehaviour
       }  
             IEnumerator DieAnimation() {
             animatorController.SetTrigger("Die");
+            playerSounds[1].PlayDelayed(0.5f);
             yield return null;
             animatorController.SetTrigger("Start_Move");
             }
