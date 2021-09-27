@@ -11531,7 +11531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410039393}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.12, y: -0, z: 948.43555}
+  m_LocalPosition: {x: -0.03, y: -4.72, z: 948.43555}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 745440659}
@@ -13787,7 +13787,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2924528, g: 0, b: 0.048345625, a: 1}
+  m_BackGroundColor: {r: 0.023529414, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -30279,7 +30279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154171438}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.84999996, y: 0.436, z: 948.43555}
+  m_LocalPosition: {x: -1.0000002, y: -4.284, z: 948.43555}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 745440659}
@@ -43811,7 +43811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621180680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13000005, y: 0.40999997, z: 948.43555}
+  m_LocalPosition: {x: -0.01999998, y: -4.31, z: 948.43555}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 745440659}
@@ -45553,7 +45553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684941033}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.844, y: 0.08399999, z: 948.43555}
+  m_LocalPosition: {x: -0.9940002, y: -4.79, z: 948.43555}
   m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_Children: []
   m_Father: {fileID: 745440659}
@@ -54992,11 +54992,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1226927736}
-  star_pos:
-  - {x: -0.05, y: 2.767262, z: 0}
-  - {x: -0.05, y: 1.7, z: 0}
-  - {x: -3.984, y: 1.577262, z: 0}
-  - {x: -3.984, y: 2.787262, z: 0}
   playerSounds:
   - {fileID: 1226927740}
   - {fileID: 1227598265}

@@ -9,7 +9,7 @@ public class Tween_Manager : MonoBehaviour
     [SerializeField] private GameObject player; 
     private Tweener tweener; 
     private int i;   
-    [SerializeField] private Vector3[] star_pos; 
+    private Vector3[] star_pos; 
     private bool move; 
     private string[] animatorDirections;
     private Animator animatorController; 
@@ -21,15 +21,18 @@ public class Tween_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tweener = gameObject.GetComponent<Tweener>();
-        i = 0; 
+        tweener = gameObject.GetComponent<Tweener>(); 
         animatorController = player.GetComponent<Animator>();
 
         animatorDirections = new string [4] {
             "MoveDown", "MoveLeft", "MoveUp", "MoveRight"
         };
-    }
+        star_pos = new Vector3 [4] {
+            new Vector3(-0.05f,2.7672f, 0.0f), new Vector3(0.05f, 1.7f, 0.0f), new Vector3(-3.984f, 1.577262f, 0.0f), new Vector3(-3.894f, 2.787262f, 0.0f)};
 
+               i = 0;
+        }
+    
     // Update is called once per frame
     void Update() {
         timer += Time.deltaTime; 
@@ -54,10 +57,9 @@ public class Tween_Manager : MonoBehaviour
             playerSounds[1].PlayDelayed(0.5f);
             yield return null;
             animatorController.SetTrigger("Start_Move");
+                }
             }
-
-
-    }
+    
 
     
 
