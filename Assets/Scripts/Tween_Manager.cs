@@ -47,17 +47,11 @@ public class Tween_Manager : MonoBehaviour
             animatorController.SetTrigger(animatorDirections[i]);
              i = i + 1; 
              if (i == 4) {
-            StartCoroutine(DieAnimation()); 
-             i = 0;
+                  i = 0;
              }
         }
       }  
-            IEnumerator DieAnimation() {
-            animatorController.SetTrigger("Die");
-            playerSounds[1].PlayDelayed(0.5f);
-            yield return null;
-            animatorController.SetTrigger("Start_Move");
-                }
+            
             }
     
 
