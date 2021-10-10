@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class SceneManager : MonoBehaviour
 {
-    public enum GameState {StartScene = 0, Level1 = 1};
-
-    public static GameState currentGameState = GameState.StartScene;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +14,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameManager.currentGameState == GameManager.GameState.StartScene && Input.GetKeyDown("return")) {
+            Debug.Log("test");
+        }
     }
+
+
 }
