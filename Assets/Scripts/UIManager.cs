@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,10 +14,11 @@ public class SceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.currentGameState == GameManager.GameState.StartScene && Input.GetKeyDown("return")) {
-            Debug.Log("test");
-        }
+        
     }
 
-
+    public void LoadLevelOne() {
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene("Level1");
+    }
 }
