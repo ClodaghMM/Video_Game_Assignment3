@@ -21,4 +21,10 @@ public class UIManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene("Level1");
     }
+
+    public void ExitLevelOne() {
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene("StartScene");
+    }
+
 }
