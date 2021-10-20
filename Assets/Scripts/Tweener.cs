@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tweener : MonoBehaviour
 {
-    private static Tween activeTween; 
+    public Tween activeTween; 
     private float timeFraction;
 
     
@@ -39,10 +39,6 @@ public class Tweener : MonoBehaviour
         if(activeTween == null) {
             activeTween = new Tween(targetObject, startPos, endPos, Time.time, duration);
         }
-
-    public static Tweener activeTween() {
-      get{return activeTween;}
-    } 
 }
 }
 
