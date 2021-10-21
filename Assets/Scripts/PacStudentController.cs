@@ -13,7 +13,7 @@ public class PacStudentController : MonoBehaviour
     private float speed;
     private Animator animatorController;
     private Vector3[] movePos = new Vector3 [4] {
-        new Vector3 (0.4f, 0.0f, 0.0f), new Vector3(0.0f, -0.4f, 0.0f), new Vector3(-0.4f, 0.0f, 0.0f), new Vector3(0.0f, 0.4f, 0.0f)};
+        new Vector3 (0.23f, 0.0f, 0.0f), new Vector3(0.0f, -0.23f, 0.0f), new Vector3(-0.23f, 0.0f, 0.0f), new Vector3(0.0f, 0.23f, 0.0f)};
     private string[] animatorDirections = new string [4] {
             "MoveDown", "MoveLeft", "MoveUp", "MoveRight"
         };
@@ -44,6 +44,21 @@ public class PacStudentController : MonoBehaviour
             playerInput = "";
         }
 
+        if(Input.GetKeyDown("a")) {
+            playerInput = "a";
+            characterMovement(2);
+            lastInput = playerInput;
+            playerInput = "";
+        }
+
+        if(Input.GetKeyDown("w")) {
+            playerInput = "w";
+            characterMovement(3);
+            lastInput = playerInput;
+            playerInput = "";
+        }
+
+
         if(Vector3.Distance(player.transform.position,nextPos) < 0.4 && playerInput == "")
         {   
             if(lastInput == "d")
@@ -57,20 +72,18 @@ public class PacStudentController : MonoBehaviour
                 characterMovement(1);
             }
 
-
-        }
-        
+        //method to check if it is walkable 
+                   
         //method to check that a key was pressed. 
-
+        }
+    }
 
     void characterMovement(int i) {
         nextPos = player.transform.position + movePos[i];
         speed = Mathf.Clamp(0.5f * Time.fixedDeltaTime, 0.5f, 2.0f);
         tweener.AddTween(player.transform, player.transform.position, nextPos, speed);}
-
-        
     }
-}
+
 
     
     
