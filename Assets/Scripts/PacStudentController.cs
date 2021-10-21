@@ -9,8 +9,8 @@ public class PacStudentController : MonoBehaviour
     private Vector3 nextPos;
     private Tweener tweener;
     private string playerInput;
-    private int counter = 0; 
     private string currentInput;
+    private float speed;
     private Animator animatorController;
     private Vector3[] movePos = new Vector3 [4] {
         new Vector3 (0.4f, 0.0f, 0.0f), new Vector3(0.0f, -0.4f, 0.0f), new Vector3(-0.4f, 0.0f, 0.0f), new Vector3(0.0f, 0.4f, 0.0f)};
@@ -40,7 +40,6 @@ public class PacStudentController : MonoBehaviour
         if(Input.GetKeyDown("s")) {
             playerInput = "s";
             characterMovement(1);
-            lastInput = "s";
             lastInput = playerInput;
             playerInput = "";
         }
@@ -51,7 +50,14 @@ public class PacStudentController : MonoBehaviour
             {
                 currentInput = lastInput;
                 characterMovement(0);} 
+        
+            if(lastInput == "s")
+            {
+                currentInput = lastInput;
+                characterMovement(1);
             }
+
+
         }
         
         //method to check that a key was pressed. 
@@ -59,10 +65,12 @@ public class PacStudentController : MonoBehaviour
 
     void characterMovement(int i) {
         nextPos = player.transform.position + movePos[i];
-        tweener.AddTween(player.transform, player.transform.position, nextPos, 3.5f* Time.deltaTime);}
+        speed = Mathf.Clamp(0.5f * Time.fixedDeltaTime, 0.5f, 2.0f);
+        tweener.AddTween(player.transform, player.transform.position, nextPos, speed);}
 
-        //check if player input was entered here.
+        
     }
+}
 
     
     
