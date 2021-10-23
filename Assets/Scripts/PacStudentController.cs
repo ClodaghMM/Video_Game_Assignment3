@@ -59,7 +59,7 @@ public class PacStudentController : MonoBehaviour
         }
 
 
-        if(Vector3.Distance(player.transform.position,nextPos) < 0.4 && playerInput == "")
+        if(Vector3.Distance(player.transform.position,nextPos) < 0.3 && playerInput == "")
         {   
             if(lastInput == "d")
             {
@@ -72,17 +72,38 @@ public class PacStudentController : MonoBehaviour
                 characterMovement(1);
             }
 
+            if(lastInput == "a")
+            {
+                currentInput = lastInput;
+                characterMovement(2);
+            }
+
+            if(lastInput == "w")
+            {
+                currentInput = lastInput;
+                characterMovement(3);
+            }
+
         //method to check if it is walkable 
-                   
-        //method to check that a key was pressed. 
+        checkWall();
         }
     }
 
     void characterMovement(int i) {
         nextPos = player.transform.position + movePos[i];
-        speed = Mathf.Clamp(0.5f * Time.fixedDeltaTime, 0.5f, 2.0f);
+        speed = Mathf.Clamp(0.5f * Time.fixedDeltaTime, 0.3f, 2.0f);
         tweener.AddTween(player.transform, player.transform.position, nextPos, speed);}
+    
+
+    
+
+    bool checkWall() {
+        RaycastHit wallInfo;
+        bool isWall = Physics.Raycast(transform.position,Vector3.left, out wallInfo, 1.0f);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * wallInfo.distance, Color.yellow);
+            return true; 
     }
+}
 
 
     
