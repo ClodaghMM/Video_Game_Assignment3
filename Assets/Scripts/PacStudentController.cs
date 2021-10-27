@@ -11,13 +11,13 @@ public class PacStudentController : MonoBehaviour
     private string playerInput;
     private string currentInput;
     private float speed;
+    private Vector2 position;
     private Animator animatorController;
     private Vector3[] movePos = new Vector3 [4] {
         new Vector3 (0.23f, 0.0f, 0.0f), new Vector3(0.0f, -0.23f, 0.0f), new Vector3(-0.23f, 0.0f, 0.0f), new Vector3(0.0f, 0.23f, 0.0f)};
     private string[] animatorDirections = new string [4] {
             "MoveDown", "MoveLeft", "MoveUp", "MoveRight"
         };
-    private GameObject wallnames;
     private string lastInput;
     // Start is called before the first frame update
     void Start()
@@ -94,16 +94,17 @@ public class PacStudentController : MonoBehaviour
     void characterMovement(int i) {
         nextPos = player.transform.position + movePos[i];
         speed = Mathf.Clamp(0.5f * Time.fixedDeltaTime, 0.3f, 2.0f);
-        tweener.AddTween(player.transform, player.transform.position, nextPos, speed);}
-    
-   
+        tweener.AddTween(player.transform, player.transform.position, nextPos, speed);
+        position = new Vector2(transform.position.x, transform.position.y);
+        }
 
-    
-
-   bool checkWalkable() {
-    RaycastHit wallInfo;
-        bool isWall = Physics.Raycast(transform.position,Vector3.right, out wallInfo, 2.0f);
-         return true; 
+   void checkWalkable() {
+    RaycastHit2D wallInfo = Physics2D.Raycast(position,Vector2.right, 2.0f);
+    Debug.DrawRay(position, Vector2.right, Color.green);
+        if(wallInfo.collider != null) 
+        {
+            Debug.Log("we hit");
+        }
     }
 }
 
