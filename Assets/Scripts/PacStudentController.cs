@@ -18,7 +18,7 @@ public class PacStudentController : MonoBehaviour
     private AudioSource move_sound; 
     private Animator animatorController;
     private Vector3[] movePos = new Vector3 [5] {
-        new Vector3 (0.23f, 0.0f, 0.0f), new Vector3(0.0f, -0.23f, 0.0f), new Vector3(-0.23f, 0.0f, 0.0f), new Vector3(0.0f, 0.23f, 0.0f), new Vector3(0.0f, 0.0f, 0.0f)};
+        new Vector3 (0.2f, 0.0f, 0.0f), new Vector3(0.0f, -0.2f, 0.0f), new Vector3(-0.2f, 0.0f, 0.0f), new Vector3(0.0f, 0.2f, 0.0f), new Vector3(0.0f, 0.0f, 0.0f)};
     private string lastInput;
 
 
@@ -129,7 +129,7 @@ public class PacStudentController : MonoBehaviour
 
        if(currentInput == "d")
        {
-    RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.right, 0.23f);
+    RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.right, 0.3f);
 
         if(wallright.collider != null) 
         {
@@ -139,7 +139,7 @@ public class PacStudentController : MonoBehaviour
     }
         if(currentInput == "s")
        {
-    RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.down, 0.23f);
+    RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.down, 0.3f);
 
         if(wallright.collider != null) 
         {
@@ -150,18 +150,18 @@ public class PacStudentController : MonoBehaviour
 
         if(lastInput == "a")
         {
-            RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.left, 0.3f);
+            RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.left, 0.35f);
 
         if(wallright.collider != null) 
         {
-            Debug.Log("hit");
+            Debug.Log("wall hit");
             characterMovement(4);
         }
         }
 
         if(lastInput == "w")
         {
-            RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.up, 0.23f);
+            RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.up, 0.3f);
 
         if(wallright.collider != null) 
         {
