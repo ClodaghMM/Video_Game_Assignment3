@@ -133,7 +133,6 @@ public class PacStudentController : MonoBehaviour
 
         if(wallright.collider != null) 
         {
-            Debug.Log("hit");
             characterMovement(4);
         }
     }
@@ -143,7 +142,6 @@ public class PacStudentController : MonoBehaviour
 
         if(wallright.collider != null) 
         {
-            Debug.Log("hit");
             characterMovement(4);
         }
     }
@@ -154,7 +152,6 @@ public class PacStudentController : MonoBehaviour
 
         if(wallright.collider != null) 
         {
-            Debug.Log("wall hit");
             characterMovement(4);
         }
         }
@@ -165,7 +162,6 @@ public class PacStudentController : MonoBehaviour
 
         if(wallright.collider != null) 
         {
-            Debug.Log("hit");
             characterMovement(4);
         }
         }
