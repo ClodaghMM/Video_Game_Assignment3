@@ -13,6 +13,7 @@ public class PacStudentController : MonoBehaviour
     private float speed;
     private bool isWall;
     private Vector2 position;
+    private RaycastHit2D wallright;
     private float timer;
     private int move_time = 1;
     private AudioSource move_sound; 
@@ -35,12 +36,6 @@ public class PacStudentController : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;   
-        if((int)timer == move_time) 
-        {
-            move_sound.Play();
-            move_time += 1;
-        }
-    
         if(Input.GetKeyDown("d")) {
             playerInput = "d";
             checkWalkable(playerInput);
@@ -116,12 +111,27 @@ public class PacStudentController : MonoBehaviour
         nextPos = player.transform.position + movePos[i];
         speed = Mathf.Clamp(0.5f * Time.fixedDeltaTime, 0.3f, 2.0f);
         tweener.AddTween(player.transform, player.transform.position, nextPos, speed);
+
+        if((int)timer == move_time) 
+      {
+        move_sound.Play();
+           move_time += 1;
+      }
+
+        
         position = new Vector2(transform.position.x, transform.position.y);
         }
         else if(i == 4)
         {
             nextPos = player.transform.position + movePos[i];
             tweener.AddTween(player.transform, player.transform.position, nextPos, speed);
+            move_sound.Pause();
+
+            animatorController.SetBool("stationary", false);
+            animatorController.SetBool("down", true);
+            animatorController.SetBool("right", true);
+            animatorController.SetBool("left", true);
+            animatorController.SetBool("up", true);
         }
     }
 
@@ -129,7 +139,7 @@ public class PacStudentController : MonoBehaviour
 
        if(currentInput == "d")
        {
-    RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.right, 0.3f);
+        wallright = Physics2D.Raycast(position,Vector2.right, 0.3f);
 
         if(wallright.collider != null) 
         {
@@ -138,7 +148,7 @@ public class PacStudentController : MonoBehaviour
     }
         if(currentInput == "s")
        {
-    RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.down, 0.3f);
+        wallright = Physics2D.Raycast(position,Vector2.down, 0.3f);
 
         if(wallright.collider != null) 
         {
@@ -148,7 +158,7 @@ public class PacStudentController : MonoBehaviour
 
         if(lastInput == "a")
         {
-            RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.left, 0.35f);
+            wallright = Physics2D.Raycast(position,Vector2.left, 0.35f);
 
         if(wallright.collider != null) 
         {
@@ -158,7 +168,7 @@ public class PacStudentController : MonoBehaviour
 
         if(lastInput == "w")
         {
-            RaycastHit2D wallright = Physics2D.Raycast(position,Vector2.up, 0.3f);
+            wallright = Physics2D.Raycast(position,Vector2.up, 0.3f);
 
         if(wallright.collider != null) 
         {
@@ -182,6 +192,7 @@ public class PacStudentController : MonoBehaviour
          animatorController.SetBool("down", true);
          animatorController.SetBool("left", true);
          animatorController.SetBool("up", true);
+         animatorController.SetBool("stationary", true);
         }
 
         if(playerInput == "a")
@@ -190,6 +201,7 @@ public class PacStudentController : MonoBehaviour
             animatorController.SetBool("down", true);
             animatorController.SetBool("right", true);
             animatorController.SetBool("up", true);
+            animatorController.SetBool("stationary", true);
         }
 
         if(playerInput == "w")
