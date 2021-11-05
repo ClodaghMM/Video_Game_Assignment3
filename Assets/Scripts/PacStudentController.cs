@@ -18,6 +18,7 @@ public class PacStudentController : MonoBehaviour
     private int move_time = 1;
     private AudioSource move_sound; 
     private Animator animatorController;
+    private bool pauseSound= true;
     private Vector3[] movePos = new Vector3 [5] {
         new Vector3 (0.2f, 0.0f, 0.0f), new Vector3(0.0f, -0.2f, 0.0f), new Vector3(-0.2f, 0.0f, 0.0f), new Vector3(0.0f, 0.2f, 0.0f), new Vector3(0.0f, 0.0f, 0.0f)};
     private string lastInput;
@@ -111,27 +112,48 @@ public class PacStudentController : MonoBehaviour
         nextPos = player.transform.position + movePos[i];
         speed = Mathf.Clamp(0.5f * Time.fixedDeltaTime, 0.3f, 2.0f);
         tweener.AddTween(player.transform, player.transform.position, nextPos, speed);
+        pauseSound = false;
 
         if((int)timer == move_time) 
       {
         move_sound.Play();
-           move_time += 1;
+        move_time +=1;
       }
-
         
         position = new Vector2(transform.position.x, transform.position.y);
         }
         else if(i == 4)
         {
+
+            speed = 0;
+
             nextPos = player.transform.position + movePos[i];
             tweener.AddTween(player.transform, player.transform.position, nextPos, speed);
-            move_sound.Pause();
+           if(pauseSound == false)
+           {
+               move_sound.Pause();
+                pauseSound = true;
+            }
+            
+        if(currentInput == "d") {
+            animatorController.SetTrigger("right_stat");
+            animatorController.ResetTrigger("left 0");
+            animatorController.ResetTrigger("right 0");
+            animatorController.ResetTrigger("up 0");
+            animatorController.ResetTrigger("down 0");
+            animatorController.ResetTrigger("left_stat");
+        }
 
-            animatorController.SetBool("stationary", false);
-            animatorController.SetBool("down", true);
-            animatorController.SetBool("right", true);
-            animatorController.SetBool("left", true);
-            animatorController.SetBool("up", true);
+        if(currentInput == "a")
+        {
+            animatorController.SetTrigger("left_stat");
+            animatorController.ResetTrigger("left 0");
+            animatorController.ResetTrigger("right 0");
+            animatorController.ResetTrigger("up 0");
+            animatorController.ResetTrigger("down 0");
+            animatorController.ResetTrigger("right_stat");
+        }
+           
         }
     }
 
@@ -158,7 +180,7 @@ public class PacStudentController : MonoBehaviour
 
         if(lastInput == "a")
         {
-            wallright = Physics2D.Raycast(position,Vector2.left, 0.35f);
+            wallright = Physics2D.Raycast(position,Vector2.left, 0.3f);
 
         if(wallright.collider != null) 
         {
@@ -180,36 +202,43 @@ public class PacStudentController : MonoBehaviour
     void characterDirection(string playerInput) {
         if(playerInput == "s")
         {
-            animatorController.SetBool("down", false);
-            animatorController.SetBool("right", true);
-            animatorController.SetBool("left", true);
-            animatorController.SetBool("up", true);
+            animatorController.SetTrigger("down 0");
+            animatorController.ResetTrigger("left 0");
+            animatorController.ResetTrigger("right 0");
+            animatorController.ResetTrigger("up 0");
+            animatorController.ResetTrigger("right_stat");
+            //animatorController.ResetTrigger("left_stat");
         }
 
         if(playerInput == "d")
         {
-        animatorController.SetBool("right", false);
-         animatorController.SetBool("down", true);
-         animatorController.SetBool("left", true);
-         animatorController.SetBool("up", true);
-         animatorController.SetBool("stationary", true);
+            animatorController.SetTrigger("right 0");
+            animatorController.ResetTrigger("left 0");
+            animatorController.ResetTrigger("down 0");
+            animatorController.ResetTrigger("up 0");
+           animatorController.ResetTrigger("right_stat");
+            //animatorController.ResetTrigger("left_stat");
         }
 
         if(playerInput == "a")
         {
-            animatorController.SetBool("left", false);
-            animatorController.SetBool("down", true);
-            animatorController.SetBool("right", true);
-            animatorController.SetBool("up", true);
-            animatorController.SetBool("stationary", true);
+            animatorController.SetTrigger("left 0");
+            animatorController.ResetTrigger("right 0");
+            animatorController.ResetTrigger("down 0");
+            animatorController.ResetTrigger("up 0");
+            animatorController.ResetTrigger("right_stat");
+            //animatorController.ResetTrigger("left_stat");
         }
 
         if(playerInput == "w")
         {
-            animatorController.SetBool("up", false);
-            animatorController.SetBool("left", true);
-            animatorController.SetBool("down", true);
-            animatorController.SetBool("right", true);
+            animatorController.SetTrigger("up 0");
+            animatorController.ResetTrigger("right 0");
+            animatorController.ResetTrigger("down 0");
+            animatorController.ResetTrigger("left 0");
+            animatorController.ResetTrigger("right_stat");
+            //animatorController.ResetTrigger("left_stat");
+
         }
     }
 }
