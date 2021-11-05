@@ -11,7 +11,6 @@ public class PacStudentController : MonoBehaviour
     private string playerInput;
     private string currentInput;
     private float speed;
-    private bool isWall;
     private Vector2 position;
     private RaycastHit2D wallright;
     private float timer;
@@ -58,8 +57,8 @@ public class PacStudentController : MonoBehaviour
         if(Input.GetKeyDown("a")) {
             playerInput = "a";
             checkWalkable(playerInput);
-            characterDirection(playerInput);
-            characterMovement(2);
+                    characterDirection(playerInput);
+                    characterMovement(2);
             lastInput = playerInput;
             playerInput = "";
         }
@@ -70,7 +69,7 @@ public class PacStudentController : MonoBehaviour
             characterDirection(playerInput);
             characterMovement(3);
             lastInput = playerInput;
-            playerInput = "";
+            playerInput = ""; 
         }
 
         if(Vector3.Distance(player.transform.position,nextPos) < 0.3 && playerInput == "")
@@ -134,25 +133,6 @@ public class PacStudentController : MonoBehaviour
                move_sound.Pause();
                 pauseSound = true;
             }
-            
-        if(currentInput == "d") {
-            animatorController.SetTrigger("right_stat");
-            animatorController.ResetTrigger("left 0");
-            animatorController.ResetTrigger("right 0");
-            animatorController.ResetTrigger("up 0");
-            animatorController.ResetTrigger("down 0");
-            animatorController.ResetTrigger("left_stat");
-        }
-
-        if(currentInput == "a")
-        {
-            animatorController.SetTrigger("left_stat");
-            animatorController.ResetTrigger("left 0");
-            animatorController.ResetTrigger("right 0");
-            animatorController.ResetTrigger("up 0");
-            animatorController.ResetTrigger("down 0");
-            animatorController.ResetTrigger("right_stat");
-        }
            
         }
     }
@@ -165,6 +145,7 @@ public class PacStudentController : MonoBehaviour
 
         if(wallright.collider != null) 
         {
+       
             characterMovement(4);
         }
     }
@@ -184,6 +165,7 @@ public class PacStudentController : MonoBehaviour
 
         if(wallright.collider != null) 
         {
+    
             characterMovement(4);
         }
         }
@@ -206,8 +188,7 @@ public class PacStudentController : MonoBehaviour
             animatorController.ResetTrigger("left 0");
             animatorController.ResetTrigger("right 0");
             animatorController.ResetTrigger("up 0");
-            animatorController.ResetTrigger("right_stat");
-            //animatorController.ResetTrigger("left_stat");
+            
         }
 
         if(playerInput == "d")
@@ -216,8 +197,6 @@ public class PacStudentController : MonoBehaviour
             animatorController.ResetTrigger("left 0");
             animatorController.ResetTrigger("down 0");
             animatorController.ResetTrigger("up 0");
-           animatorController.ResetTrigger("right_stat");
-            //animatorController.ResetTrigger("left_stat");
         }
 
         if(playerInput == "a")
@@ -226,8 +205,7 @@ public class PacStudentController : MonoBehaviour
             animatorController.ResetTrigger("right 0");
             animatorController.ResetTrigger("down 0");
             animatorController.ResetTrigger("up 0");
-            animatorController.ResetTrigger("right_stat");
-            //animatorController.ResetTrigger("left_stat");
+            
         }
 
         if(playerInput == "w")
@@ -236,8 +214,7 @@ public class PacStudentController : MonoBehaviour
             animatorController.ResetTrigger("right 0");
             animatorController.ResetTrigger("down 0");
             animatorController.ResetTrigger("left 0");
-            animatorController.ResetTrigger("right_stat");
-            //animatorController.ResetTrigger("left_stat");
+           
 
         }
     }
